@@ -1,0 +1,178 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
+    Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 4rem 12rem;
+}
+
+.slider {
+  position: relative;
+  width: 100%;
+  margin: 40px auto 0;
+  user-select: none;
+  touch-action: pan-y;
+  padding: 0 50px;
+}
+
+.slider img {
+  poiner-events: none;
+}
+
+.slider-list {
+  width: 100%;
+  overflow: hidden;
+}
+
+.slider-list.grab {
+  cursor: grab;
+}
+
+.slider-list.grabbing {
+  cursor: grabbing;
+}
+
+.slider-track {
+  display: flex;
+}
+
+.slide {
+  width: 100%;
+  /* height: 200px; */
+  flex-shrink: 0;
+  font-size: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.slide-card-description {
+  font-size: 16px;
+  text-align: center;
+  line-height: 24px;
+}
+
+.slide-card-name-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.slide-card-name {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.slide-card-title {
+  font-size: 16px;
+  margin: 0;
+  text-align: center;
+}
+
+.slide-card-image {
+  width: 100px;
+  height: 100px;
+}
+
+.slide-card-button {
+  width: 200px;
+  height: 40px;
+  background: #2784fc;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.slider-arrows {
+  display: flex;
+  margin-top: 15px;
+  text-align: center;
+}
+
+.prev {
+  left: -15px;
+}
+
+.next {
+  right: -15px;
+}
+
+.next,
+.prev {
+  position: absolute;
+  top: 50%;
+  background: none;
+  border: none;
+  margin: 0 10px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.next.disabled,
+.prev.disabled {
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+.slider > ul {
+  padding-left: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.slider > ul > li {
+  list-style: none;
+  background: gray;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.slider > ul > li.active {
+  background: black;
+}
+
+.display-none {
+  display: none;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+/* CSS for screens which have width less than 600px / Mobile View CSS */
+@media only screen and (max-width: 600px) {
+  .slider-arrows {
+    display: none;
+  }
+
+  .section {
+    padding: 0 1rem;
+  }
+
+  .slider {
+    padding: 0;
+  }
+}
